@@ -12,7 +12,7 @@ In this demo, the study area is Shanghai, China. The spatial granularity is 80*8
 train_addingMask_validation.py
 ## implementing
 ### Dataset (data_80_80_2000_implementing)
-In this demo, the study area is Shanghai, China. The spatial granularity is 80*80. The input dataset (several examples are provided in the folder **data_80_80_2000_implementing**) is calculated based on the task requirement and coarse-grained information of candidate vehicles. Meanwhile, the trained FiSC (the model is provided in the folder **train_log_80_2000veh**) is used to forecast fine-grained sensing coverage.
+In this demo, the study area is Shanghai, China. The spatial granularity is 80*80. The input dataset (several examples are provided in the folder **data_80_80_2000_implementing**) is calculated based on the task requirement and coarse-grained information of candidate vehicles. Meanwhile, the trained FiSC is used to forecast fine-grained sensing coverage.
 ### Requirements
 * **tensorflow**
 * **numpy**
