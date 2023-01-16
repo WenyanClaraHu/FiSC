@@ -11,7 +11,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--num_gpu', type=int, default=1, help='the number of GPUs to use [default: 2]')
 parser.add_argument('--model_dir', default='train_log_80_5000veh', help='Log dir [default: log]')
 parser.add_argument('--batch_size', type=int, default=1, help='Batch Size during training for each GPU [default: 12]')
-parser.add_argument('--testing_data_path', default='./reliability2/', help='Make sure the source training-data files path')
+parser.add_argument('--testing_data_path', default='./data_80_80_2000_implementing/', help='Make sure the source training-data files path')
 FLAGS = parser.parse_args()
 
 TEST_DATA_PATH = FLAGS.testing_data_path
@@ -36,7 +36,7 @@ def test():
         config.gpu_options.allow_growth = True
         config.allow_soft_placement = True
         sess = tf.compat.v1.Session(config=config)
-        saver.restore(sess, tf.compat.v1.train.latest_checkpoint(MODEL_DIR)) # 参数加载到模型中
+        saver.restore(sess, tf.compat.v1.train.latest_checkpoint(MODEL_DIR)) # load model
         train_set, val_set = DG.get_train_val_set(TEST_DATA_PATH)
         train_generator = DG.generate_training_minibatch_data(TEST_DATA_PATH, BATCH_SIZE, train_set)
 
@@ -76,7 +76,7 @@ def test_one_sample(sess, ops, generator, test_data_set):
         # print('___error___sum___',(label-pre).sum())
         # print(label.sum())
         # print((pre-label).sum())
-        pre_, mask_, input_ = sess.run([ops['pre'], ops['mask'], ops['input']], feed_dict=feed_dict) # 只要这一步
+        pre_, mask_, input_ = sess.run([ops['pre'], ops['mask'], ops['input']], feed_dict=feed_dict)
         input_ = np.squeeze(input_)
         input_ = np.reshape(input_,(6400,12))
         print(input_)
