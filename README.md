@@ -3,4 +3,4 @@ This repository includes our works on Forecasting fine-grained sensing coverage 
 * **FiSC model** integrates the task requirement and coarse-grained information of candidate vehicles with a deep learning model to forecast fine-grained sensing coverage of OVS.
 * **Vehicle selection algorithm** combines the genetic algorithm and the proposed FiSC to maximize sensing quality for a given sensing task.
 
-A demo is provided for each part (FiSC and Vehicle selection algorithm).
+A demo is provided for each part (FiSC model and Vehicle selection algorithm).
