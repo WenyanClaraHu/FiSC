@@ -41,7 +41,7 @@ def load_model():
         config.gpu_options.allow_growth = True
         config.allow_soft_placement = True
         sess = tf.compat.v1.Session(config=config)
-        saver.restore(sess, tf.compat.v1.train.latest_checkpoint(MODEL_DIR))  # 参数加载到模型中
+        saver.restore(sess, tf.compat.v1.train.latest_checkpoint(MODEL_DIR))
 
         ops = {'input': input,
                'is_training': is_training,
@@ -69,7 +69,7 @@ def estimate(sess, ops, lst_v, tg, df_popular, df_bus, df_vehInfo, df_f_r, df_Rt
         # print('___error___sum___',(label-pre).sum())
         # print(label.sum())
         # print((pre-label).sum())
-    pre_, mask_, input_ = sess.run([ops['pre'], ops['mask'], ops['input']], feed_dict=feed_dict) # 只要这一步
+    pre_, mask_, input_ = sess.run([ops['pre'], ops['mask'], ops['input']], feed_dict=feed_dict)
     pre_ = pre_*batch_mask_data
     pre__ = pre_.flatten()
     return(pre__)
