@@ -6,4 +6,4 @@ In this demo, the study area is Shanghai, China. The spatial granularity is 80*8
 ## Material
 * [The trained model](https://unimelbcloud-my.sharepoint.com/:f:/r/personal/wenyan1_student_unimelb_edu_au/Documents/train_log_80_2000veh?csf=1&web=1&e=zmSZQY)  
 ## Run the demo
-Main.py
+main.py
