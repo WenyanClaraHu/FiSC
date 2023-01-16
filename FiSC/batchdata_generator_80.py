@@ -24,8 +24,8 @@ def get_train_val_set(trainingdata_path, val_rate=0.20):
     return train_set, val_set
 
 def normalize(temp_input):
-    max_input = np.array([1000.0, 12.0, 1.0, 1.0, 1.0, 1.0, 24.0, 12.0, 8.0, 4.0, 19.0, 47.0], dtype = np.float32)#, 22.0, 153.0, 122.0, 17.0, 191.0, 105.0
-    min_input = np.array([0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, -1.0], dtype = np.float32) # , -1.0, -1.0, -1.0, -1.0, -1.0, -1.0
+    max_input = np.array([1000.0, 12.0, 1.0, 1.0, 1.0, 1.0, 24.0, 12.0, 8.0, 4.0, 19.0, 47.0], dtype = np.float32)
+    min_input = np.array([0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, -1.0], dtype = np.float32)
     # max_input = np.array([1000.0, 12.0, 1.0, 9068.0, 2879.0], dtype = np.float32)
     # min_input = np.array([0.0, 1.0, 0.0, 0.0, 0.0], dtype = np.float32)
     # min_input = np.min(temp_input, axis=0)
