@@ -125,11 +125,5 @@ def Unet(name, in_data, training, reuse=False):
 
 
 def get_loss(pre, label, mask):
-    # def get_loss(pre, label, 权重矩阵):
-    # loss = tf.losses.mean_squared_error(label, pre)
-    # loss = tf.reduce_sum(tf.reduce_mean(tf.square(label - pre), axis=0))
     loss = tf.reduce_sum(tf.reduce_mean(tf.square((label - pre)*mask), axis=0)) / 3420.0
-    # loss = tf.keras.losses.mean_absolute_error(label, pre)
-    # loss = tf.reduce_sum(tf.reduce_mean(tf.abs(label-pre), axis=0))
-    # loss = tf.reduce_mean(tf.reduce_mean(tf.square(label - pre), axis=0))
     return loss
